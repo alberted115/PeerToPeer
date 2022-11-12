@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package AC;
+option go_package = "https://github.com/alberted115/PeerToPeer;AC";
+
+
+service AccessControl {
+  rpc requestAccess (Request) returns (Reply) {}
+  rpc giveAccess (Give) returns (Reply) {}
+}
+
+message Request {
+  int32 id = 1;
+  int32 lamport = 2;
+}
+
+message Give {
+  int32 id = 1;
+  int32 lamport = 2;
+}
+
+message Reply {
+
+}
